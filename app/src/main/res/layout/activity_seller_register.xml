@@ -10,7 +10,7 @@
     <ImageView
         android:id="@+id/img_seller"
         android:layout_width="wrap_content"
-        android:layout_height="200dp"
+        android:layout_height="50dp"
         android:src="@drawable/seller"
         android:scaleType="centerCrop"/>
 

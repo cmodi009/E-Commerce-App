@@ -1,11 +1,20 @@
 package com.example.e_commerce.Model;
 
 public class Products {
-    private String pname, description, price, image, category, pid, date, time;
+    private String pname, description, price, image, category, pid, date, time,productstate;
 
     public Products(){}
 
-    public Products(String pname, String description, String price, String image, String category, String pid, String date, String time) {
+    public String getProductstate() {
+        return productstate;
+    }
+
+    public void setProductstate(String productstate) {
+        this.productstate = productstate;
+    }
+
+    public Products(String pname, String description, String price, String image,
+                    String category, String pid, String date, String time, String producstate) {
         this.pname = pname;
         this.description = description;
         this.price = price;
@@ -14,6 +23,7 @@ public class Products {
         this.pid = pid;
         this.date = date;
         this.time = time;
+        this.productstate=producstate;
     }
 
     public String getPname() {

@@ -100,7 +100,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         super.onStart();
 
         FirebaseRecyclerOptions<Products> options=new FirebaseRecyclerOptions.Builder<Products>()
-                .setQuery(ProductsRef,Products.class)
+                .setQuery(ProductsRef.orderByChild("productstate").equalTo("Approved"),Products.class)
                 .build();
 
         FirebaseRecyclerAdapter<Products, ProductViewHolder> adapter =
@@ -208,13 +208,11 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         }
         else if (id == R.id.nav_logout)
         {
-            if(!type.equals("Admin")) {
                 Paper.book().destroy();
                 Intent intent = new Intent(HomeActivity.this, MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
                 finish();
-            }
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
