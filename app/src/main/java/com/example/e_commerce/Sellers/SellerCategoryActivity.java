@@ -148,7 +148,8 @@ public class SellerCategoryActivity extends AppCompatActivity {
         });
 
 
-        watches.setOnClickListener(new View.OnClickListener() {
+        watches.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View view)
             {
